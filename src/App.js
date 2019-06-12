@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+import 'react-bootstrap';
+//import ContainerM from './components/containerMaster/ContainerM';
+import ContainerP from './components/containerPresentation/ContainerP';
+import ContNav from './components/ContainerNav/ContNav';
+// import Newsletter from './components/FormMaster/FormMasterServ';
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <div className="header" > 
+   <ContNav/>
+    <div id="containerFlex" className="container">
+      <div id="contPresentation">
+        <ContainerP/>
+         </div>
     </div>
-  );
+  </div>
+ );
 }
-
 export default App;

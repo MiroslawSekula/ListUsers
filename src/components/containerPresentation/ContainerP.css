@@ -1,0 +1,9 @@
+#contPresentation{
+  position:relative;
+   top:0;
+  right:0;
+  width:100% ;
+  padding-bottom: 20%;
+  background: rgba(45, 163, 157, 0.37) ;
+  border-radius: 20px;
+}
