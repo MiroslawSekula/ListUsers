@@ -1,6 +1,6 @@
 import React from 'react';
 import './ContNav.css';
-import Newsletter from '../FormMaster/FormMasterServ';
+import FormUSerAdd from '../FormMaster/FormMasterInputUsers';
 import FormMasterBtnRefresh from '../FormMaster/FormMasterBtnRefresh';
 import FormMasterBtnCleanTheWindow from '../FormMaster/FormMasterBtnCleanTheWindow';
 import FormMasterBtnSaveInput from '../FormMaster/FormMasterBtnSaveInput';
@@ -13,7 +13,7 @@ const ContainerNav = () => {
     return(
         <nav className="navbarCustom">
         <div id ="input-style">
-                <Newsletter/>
+                <FormUSerAdd/>
             </div>
             <div id="btn-style">
               <FormMasterBtnRefresh/>

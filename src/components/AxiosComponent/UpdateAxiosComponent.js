@@ -11,13 +11,13 @@ class UpdateAxios extends Component {
 
 update(e) {
     e.preventDefault();
-    const employee = {
+    const userList = {
         author: this.state.author,
         title: this.state.title,
         extra: this.state.extra,
         description: this.state.description,
     }
-    axios.put(BASE_URL, employee)
+    axios.put(BASE_URL, userList)
     .then(res => console.log(res.data));
 }
 }

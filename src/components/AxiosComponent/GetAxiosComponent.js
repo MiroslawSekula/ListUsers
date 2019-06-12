@@ -24,12 +24,12 @@ class GetAxios extends Component {
   render(){
     return(
       <tbody id = "arrayUsers">
-        {this.state.listUsers.map(listUsers => 
+        {this.state.listUsers.map(user => 
         <tr>
-        <td>{listUsers.author}</td>
-        <td>{listUsers.title}</td>
-        <td>{listUsers.extra}</td>
-        <td>{listUsers.description}</td>
+        <td>{user.author}</td>
+        <td>{user.title}</td>
+        <td>{user.extra}</td>
+        <td>{user.description}</td>
         </tr>
         )}
       </tbody>

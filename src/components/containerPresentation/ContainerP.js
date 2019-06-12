@@ -13,7 +13,6 @@ import GetAxios from '../AxiosComponent/GetAxiosComponent';
                         <th>Lastname</th>
                         <th>Email</th>
                         <th>tel</th>
-                        <th>id</th>
                     </tr>
                 </thead>
                     <GetAxios/>

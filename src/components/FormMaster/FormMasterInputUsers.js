@@ -68,7 +68,7 @@ const FormComponent = ({ errors }) => (
         
 );
 
-const Newsletter = props => {
+const FormUSerAdd = props => {
   return (
     <Formik
       initialValues={props}
@@ -82,14 +82,14 @@ const Newsletter = props => {
   );
 };
 
-Newsletter.propTypes = {
+FormUSerAdd.propTypes = {
     Firstname: PropTypes.string,
     Lastname: PropTypes.string,
     email: PropTypes.string,
     tel: PropTypes.string,
   
 };
-Newsletter.defaultProps = {
+FormUSerAdd.defaultProps = {
     Firstname: "",
     Lastname: "",
     email: "",
@@ -97,4 +97,4 @@ Newsletter.defaultProps = {
 
 };
 
-export default Newsletter;
+export default FormUSerAdd;
