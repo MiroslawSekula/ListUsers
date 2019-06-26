@@ -4,38 +4,52 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import {Form as SForm } from 'semantic-ui-react';
 import * as yup from 'yup';
 import './FormMaster.css';
+import { AppContext } from "../../App";
 
 
 const schema = yup.object().shape({
-  Firstname: yup.string().required('Wymagany!').min(5, 'minimalnie 5znaków').max(70, 'maksymalnie 70 znaków'),
-  Lastname: yup.string().required('wymagany!').min(5, 'minimalnie 5znaków').max(70, 'maksymalnie 70 znaków'),
-  email: yup.string().required('Wymagany!').email("wprowadź email"),
-   tel: yup.number().required('Wymagany!').typeError("Wymagane podanie numeru"),
+  author: yup.string().required('Wymagany!').min(5, 'minimalnie 5znaków').max(70, 'maksymalnie 70 znaków'),
+  title: yup.string().required('wymagany!').min(5, 'minimalnie 5znaków').max(70, 'maksymalnie 70 znaków'),
+  extra: yup.string().required('Wymagany!').email("wprowadź email"),
+  description: yup.number().required('Wymagany!').typeError("Wymagane podanie numeru"),
 });
 
-const FormComponent = ({ errors }) => (
+
+const FormComponent = ({FormUSerAdd}) => (
+
+   
+
+ 
+  <AppContext.Consumer>    
+  {({onChange}) => (
+
+   
+
+
+
     <Form className="ui form">
     <SForm.Field>
     <label className = "styleLabel " >
      <Field
-       // disabled={this.state.sending}
-       name="Firstname"
+      // value = {FormUSerAdd.values.author}
+      name="author"
        placeholder = "Firstname"
+      //  onSubmit = {e => { onChange(FormUSerAdd, id)}}
      />
    </label>
-  <ErrorMessage name="Firstname"/>
+  <ErrorMessage name="author"/>
  </SForm.Field>
   
     
   <SForm.Field>
   <label className = "styleLabel">
     <Field 
-     // disabled={this.state.sending}
-     name="Lastname"
+      // value = {FormUSerAdd.values.title}
+     name="title"
      placeholder = "Lastname"
    />
  </label>
-<ErrorMessage name="Lastname"/>
+<ErrorMessage name="title"/>
 
 </SForm.Field>
 
@@ -43,57 +57,71 @@ const FormComponent = ({ errors }) => (
     <SForm.Field>
       <label className = "styleLabel " >
           <Field
-          //disabled={this.state.sending}
-          name="email"
+          // value = {FormUSerAdd.values.extra}
+          name="extra"
           type="email"
           placeholder = "e-mail"
         />
       </label>
-     <ErrorMessage name="email"/>
+     <ErrorMessage name="extra"/>
     </SForm.Field>
     
         
     <SForm.Field>
        <label className = "styleLabel " >
          <Field
-          // disabled={this.state.sending}
-          name="tel"
-          placeholder = "Telefon"
+          // {FormUSerAdd.values.description}
+          name="description"
+          placeholder = "Tel"
         />
       </label>
-     <ErrorMessage name="tel"/>
+     <ErrorMessage name="description"/>
     </SForm.Field>
     
     </Form>
-        
+    )}
+     </AppContext.Consumer>
 );
+  
+   
 
 const FormUSerAdd = props => {
+  
   return (
     <Formik
       initialValues={props}
       onSubmit={values => {
-        console.log(values); // XXX
+       
+        console.log(values) ///
+       
+     
       }}
       render={FormComponent}
-      // validate={validate}
+      
       validationSchema={schema}
     />
   );
 };
 
-FormUSerAdd.propTypes = {
-    Firstname: PropTypes.string,
-    Lastname: PropTypes.string,
-    email: PropTypes.string,
-    tel: PropTypes.string,
+
+
+
+FormUSerAdd.propsTypes = {
+
+ 
+     author: PropTypes.string,
+     title: PropTypes.string,
+     extra: PropTypes.string,
+     description: PropTypes.string,
+    
+    }
   
-};
+
 FormUSerAdd.defaultProps = {
-    Firstname: "",
-    Lastname: "",
-    email: "",
-    tel: "",
+  author: "",
+  title: "",
+  extra: "",
+  description: "",
 
 };
 

@@ -9,21 +9,29 @@ const BASE_URL = 'http://195.181.210.249:3000/todo/';
 class GetAxios extends Component {
   
   state = {
-    listUsers: []
+    listUsers: [],
+    loading: false
+        
+  };
+
+  componentDidMount = () => {
+      this.setState({loading: false});
+        this.LoadServer();
   }
-  
-  componentDidMount() {
-    axios.get(BASE_URL)
+
+  LoadServer = () =>{
+    this.setState({loading: false});
+        axios.get(BASE_URL)
         .then(res => {
+          this.setState({ ...res.data, loading: false });
           const listUsers = res.data;
-          this.setState({ listUsers });
-          console.log(res.data);
-        })
-  }
+          this.setState({ listUsers});
+     });
+  };
 
   render(){
     return(
-      <tbody id = "arrayUsers">
+        <tbody id = "arrayUsers">
         {this.state.listUsers.map(user => 
         <tr>
         <td>{user.author}</td>
