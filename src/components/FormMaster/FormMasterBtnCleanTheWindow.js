@@ -4,7 +4,7 @@ import {Button } from 'semantic-ui-react';
 
 const FormMasterBtnCleanTheWindow = () => {
     return (
-        <Button primary> Clean The Window</Button>
+        <Button primary> empty</Button>
     );
 }
 
