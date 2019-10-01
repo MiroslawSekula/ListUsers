@@ -3,9 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "consumer": "^1.2.2",
+    "eslint-utils": "^1.4.2",
+    "formik": "^1.5.8",
+    "lodash": "^4.17.15",
+    "lodash.template": "^4.5.0",
+    "mixin-deep": "^2.0.1",
+    "object-scan": "^10.0.13",
+    "prop-types": "^15.7.2",
+    "props": "^0.3.0",
+    "react": "^16.10.1",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-dom": "^16.10.1",
+    "react-scripts": "3.0.1",
+    "semantic-ui-react": "^0.87.3",
+    "set-value": "^3.0.1",
+    "shortid": "^2.2.15",
+    "yup": "^0.27.0"
   },
   "scripts": {
     "start": "react-scripts start",
